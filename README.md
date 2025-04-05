@@ -1,4 +1,4 @@
-# <img src="docs/assets/taskx-logo.png" alt="TaskX Logo" width="50"/> TaskX - Terminal Task Manager
+# TaskX - Terminal Task Manager
 
 ![Rust](https://img.shields.io/badge/Rust-1.70%2B-orange)
 ![License](https://img.shields.io/badge/license-MIT-blue)
@@ -9,7 +9,7 @@
 TaskX is a powerful, keyboard-driven terminal task manager built with Rust that helps you organize your tasks in a beautiful Kanban board right in your terminal!
 
 <p align="center">
-  <img src="docs/assets/taskx-screenshot.png" alt="TaskX Screenshot" width="100%"/>
+  <img src="https://share.cleanshot.com/tVb0RSfJ" alt="TaskX Screenshot" width="100%"/>
 </p>
 
 ## ✨ Features
@@ -120,5 +120,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 <p align="center">Made with ❤️ in Rust</p>
-
-<!-- Note: Save the screenshot from your demo to docs/assets/taskx-screenshot.png -->

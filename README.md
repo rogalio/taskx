@@ -9,7 +9,7 @@
 TaskX is a powerful, keyboard-driven terminal task manager built with Rust that helps you organize your tasks in a beautiful Kanban board right in your terminal!
 
 <p align="center">
-  <img src="https://share.cleanshot.com/tVb0RSfJ" alt="TaskX Screenshot" width="100%"/>
+  <img src="https://i.postimg.cc/F7CJ1Drr/Clean-Shot-2025-04-05-at-23-34-02-2x.png" alt="TaskX Screenshot" width="100%"/>
 </p>
 
 ## ✨ Features

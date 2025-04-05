@@ -2,10 +2,6 @@
 
 First off, thank you for considering contributing to TaskX! It's people like you that make TaskX such a great tool.
 
-## Code of Conduct
-
-By participating in this project, you agree to abide by the [Code of Conduct](CODE_OF_CONDUCT.md).
-
 ## How Can I Contribute?
 
 ### Reporting Bugs

@@ -1,0 +1,11 @@
+/Users/rogalio/Documents/taskx/target/debug/deps/libgetrandom-8d79bc770edd3fc1.rmeta: /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/lib.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/backends.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/error.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/util.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/../README.md /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/backends/getentropy.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/backends/../util_libc.rs
+
+/Users/rogalio/Documents/taskx/target/debug/deps/getrandom-8d79bc770edd3fc1.d: /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/lib.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/backends.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/error.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/util.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/../README.md /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/backends/getentropy.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/backends/../util_libc.rs
+
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/lib.rs:
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/backends.rs:
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/error.rs:
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/util.rs:
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/../README.md:
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/backends/getentropy.rs:
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.2/src/backends/../util_libc.rs:

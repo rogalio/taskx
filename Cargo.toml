@@ -1,0 +1,24 @@
+[package]
+name = "task_x"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "task_x"
+path = "src/main.rs"
+
+[dependencies]
+ratatui = "0.26.0"
+crossterm = "0.27.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.6.1", features = ["v4", "serde"] }
+anyhow = "1.0"
+clap = { version = "4.4", features = ["derive"] }
+directories = "5.0"
+strum = { version = "0.25", features = ["derive"] }
+strum_macros = "0.25"
+thiserror = "1.0"
+itertools = "0.12.0"
+unicode-width = "0.1.11"

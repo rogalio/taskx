@@ -1,0 +1,11 @@
+/Users/rogalio/Documents/taskx/target/debug/deps/libbitflags-fa7b658f6464f8cb.rmeta: /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/lib.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/iter.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/parser.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/traits.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/public.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/internal.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/external.rs
+
+/Users/rogalio/Documents/taskx/target/debug/deps/bitflags-fa7b658f6464f8cb.d: /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/lib.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/iter.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/parser.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/traits.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/public.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/internal.rs /Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/external.rs
+
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/lib.rs:
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/iter.rs:
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/parser.rs:
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/traits.rs:
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/public.rs:
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/internal.rs:
+/Users/rogalio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.9.0/src/external.rs:

@@ -7,6 +7,8 @@ use directories::ProjectDirs;
 
 use crate::models::Task;
 
+// TODO: move to config
+
 fn get_data_dir() -> Result<PathBuf> {
     let proj_dirs = ProjectDirs::from("com", "task_manager", "task_manager")
         .ok_or_else(|| anyhow::anyhow!("Could not determine project directories"))?;

@@ -1,0 +1,3 @@
+TaskX
+-----
+Simple, powerful terminal task manager

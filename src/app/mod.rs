@@ -174,33 +174,87 @@ impl App {
             // Only in Kanban mode, we want to avoid jumping between columns unexpectedly
             if self.mode == AppMode::Kanban && current_idx < tasks.len() - 1 {
                 let current_status = tasks[current_idx].status;
-                let mut next_idx = current_idx + 1;
 
-                // If next task would be in a different column and we're not at the end of current column,
-                // find the next task in the same column
-                if tasks[next_idx].status != current_status {
-                    // Check if there are more tasks in this column
-                    let same_column_tasks: Vec<usize> = tasks.iter()
-                        .enumerate()
-                        .filter(|(_, t)| t.status == current_status)
-                        .map(|(i, _)| i)
-                        .collect();
+                // Find all tasks in the same column, sorted by priority
+                let same_column_tasks: Vec<(usize, &&Task)> = tasks.iter()
+                    .enumerate()
+                    .filter(|(_, t)| t.status == current_status)
+                    .collect();
 
-                    let current_pos_in_column = same_column_tasks.iter().position(|&i| i == current_idx);
+                // Sort these tasks by priority (highest first)
+                let mut prioritized_column_tasks = same_column_tasks.clone();
+                prioritized_column_tasks.sort_by(|(_, a), (_, b)| {
+                    let a_weight = match a.priority {
+                        TaskPriority::Critical => 4,
+                        TaskPriority::High => 3,
+                        TaskPriority::Medium => 2,
+                        TaskPriority::Low => 1,
+                    };
+                    let b_weight = match b.priority {
+                        TaskPriority::Critical => 4,
+                        TaskPriority::High => 3,
+                        TaskPriority::Medium => 2,
+                        TaskPriority::Low => 1,
+                    };
+                    b_weight.cmp(&a_weight)
+                });
 
-                    if let Some(pos) = current_pos_in_column {
-                        // If we're not at the end of this column, stay in the same column
-                        if pos < same_column_tasks.len() - 1 {
-                            next_idx = same_column_tasks[pos + 1];
+                // Extract just the indexes
+                let sorted_column_task_indexes: Vec<usize> = prioritized_column_tasks.iter()
+                    .map(|(idx, _)| *idx)
+                    .collect();
+
+                // Find position of current task in this sorted list
+                if let Some(pos) = sorted_column_task_indexes.iter().position(|&idx| idx == current_idx) {
+                    // If not at the end of column, move to next task in same column
+                    if pos < sorted_column_task_indexes.len() - 1 {
+                        self.selected_task_index = Some(sorted_column_task_indexes[pos + 1]);
+                        return;
+                    } else {
+                        // At the end of column, find next column
+                        let next_status = match current_status {
+                            TaskStatus::Todo => TaskStatus::InProgress,
+                            TaskStatus::InProgress => TaskStatus::Done,
+                            TaskStatus::Done => TaskStatus::Todo,
+                        };
+
+                        // Find tasks in next column, also sorted by priority
+                        let next_column_tasks: Vec<(usize, &&Task)> = tasks.iter()
+                            .enumerate()
+                            .filter(|(_, t)| t.status == next_status)
+                            .collect();
+
+                        if !next_column_tasks.is_empty() {
+                            // Sort by priority
+                            let mut prioritized_next = next_column_tasks.clone();
+                            prioritized_next.sort_by(|(_, a), (_, b)| {
+                                let a_weight = match a.priority {
+                                    TaskPriority::Critical => 4,
+                                    TaskPriority::High => 3,
+                                    TaskPriority::Medium => 2,
+                                    TaskPriority::Low => 1,
+                                };
+                                let b_weight = match b.priority {
+                                    TaskPriority::Critical => 4,
+                                    TaskPriority::High => 3,
+                                    TaskPriority::Medium => 2,
+                                    TaskPriority::Low => 1,
+                                };
+                                b_weight.cmp(&a_weight)
+                            });
+
+                            // Take first task in next column
+                            if let Some((idx, _)) = prioritized_next.first() {
+                                self.selected_task_index = Some(*idx);
+                                return;
+                            }
                         }
                     }
                 }
-
-                self.selected_task_index = Some(next_idx);
-            } else {
-                // In other modes or when we want to switch columns, simply go to the next task
-                self.selected_task_index = Some(current_idx + 1);
             }
+
+            // Fallback to simple next
+            self.selected_task_index = Some(current_idx + 1);
         } else {
             self.selected_task_index = Some(0);
         }
@@ -222,33 +276,87 @@ impl App {
             // Only in Kanban mode, we want to avoid jumping between columns unexpectedly
             if self.mode == AppMode::Kanban && current_idx > 0 {
                 let current_status = tasks[current_idx].status;
-                let mut prev_idx = current_idx - 1;
 
-                // If previous task would be in a different column and we're not at the beginning of current column,
-                // find the previous task in the same column
-                if tasks[prev_idx].status != current_status {
-                    // Check if there are more tasks in this column
-                    let same_column_tasks: Vec<usize> = tasks.iter()
-                        .enumerate()
-                        .filter(|(_, t)| t.status == current_status)
-                        .map(|(i, _)| i)
-                        .collect();
+                // Find all tasks in the same column, sorted by priority
+                let same_column_tasks: Vec<(usize, &&Task)> = tasks.iter()
+                    .enumerate()
+                    .filter(|(_, t)| t.status == current_status)
+                    .collect();
 
-                    let current_pos_in_column = same_column_tasks.iter().position(|&i| i == current_idx);
+                // Sort these tasks by priority (highest first)
+                let mut prioritized_column_tasks = same_column_tasks.clone();
+                prioritized_column_tasks.sort_by(|(_, a), (_, b)| {
+                    let a_weight = match a.priority {
+                        TaskPriority::Critical => 4,
+                        TaskPriority::High => 3,
+                        TaskPriority::Medium => 2,
+                        TaskPriority::Low => 1,
+                    };
+                    let b_weight = match b.priority {
+                        TaskPriority::Critical => 4,
+                        TaskPriority::High => 3,
+                        TaskPriority::Medium => 2,
+                        TaskPriority::Low => 1,
+                    };
+                    b_weight.cmp(&a_weight)
+                });
 
-                    if let Some(pos) = current_pos_in_column {
-                        // If we're not at the beginning of this column, stay in the same column
-                        if pos > 0 {
-                            prev_idx = same_column_tasks[pos - 1];
+                // Extract just the indexes
+                let sorted_column_task_indexes: Vec<usize> = prioritized_column_tasks.iter()
+                    .map(|(idx, _)| *idx)
+                    .collect();
+
+                // Find position of current task in this sorted list
+                if let Some(pos) = sorted_column_task_indexes.iter().position(|&idx| idx == current_idx) {
+                    // If not at the beginning of column, move to previous task in same column
+                    if pos > 0 {
+                        self.selected_task_index = Some(sorted_column_task_indexes[pos - 1]);
+                        return;
+                    } else {
+                        // At the beginning of column, find previous column
+                        let prev_status = match current_status {
+                            TaskStatus::Todo => TaskStatus::Done,
+                            TaskStatus::InProgress => TaskStatus::Todo,
+                            TaskStatus::Done => TaskStatus::InProgress,
+                        };
+
+                        // Find tasks in previous column, also sorted by priority
+                        let prev_column_tasks: Vec<(usize, &&Task)> = tasks.iter()
+                            .enumerate()
+                            .filter(|(_, t)| t.status == prev_status)
+                            .collect();
+
+                        if !prev_column_tasks.is_empty() {
+                            // Sort by priority
+                            let mut prioritized_prev = prev_column_tasks.clone();
+                            prioritized_prev.sort_by(|(_, a), (_, b)| {
+                                let a_weight = match a.priority {
+                                    TaskPriority::Critical => 4,
+                                    TaskPriority::High => 3,
+                                    TaskPriority::Medium => 2,
+                                    TaskPriority::Low => 1,
+                                };
+                                let b_weight = match b.priority {
+                                    TaskPriority::Critical => 4,
+                                    TaskPriority::High => 3,
+                                    TaskPriority::Medium => 2,
+                                    TaskPriority::Low => 1,
+                                };
+                                b_weight.cmp(&a_weight)
+                            });
+
+                            // Take last task in previous column
+                            if let Some((idx, _)) = prioritized_prev.last() {
+                                self.selected_task_index = Some(*idx);
+                                return;
+                            }
                         }
                     }
                 }
-
-                self.selected_task_index = Some(prev_idx);
-            } else {
-                // In other modes or when we want to switch columns, simply go to the previous task
-                self.selected_task_index = Some(current_idx - 1);
             }
+
+            // Fallback to simple previous
+            self.selected_task_index = Some(current_idx - 1);
         } else {
             self.selected_task_index = Some(tasks.len() - 1);
         }

@@ -28,6 +28,7 @@ fn main() -> Result<()> {
     let mut app = App::new();
     app.load_tasks()?;
 
+
     // Main loop
     let res = run_app(&mut terminal, &mut app);
 
